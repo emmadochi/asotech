@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Asotech Construction Limited</title>
+    <meta name="description" content="Learn about Asotech Construction Limited (Asotech Homes). Our mission, vision, and core values in building luxury and sustainable real estate in Nigeria.">
+    
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB400',
+                        secondary: '#D4AF37',
+                        dark: '#111111',
+                        charcoal: '#333333',
+                        accent: '#F4F4F4',
+                        light: '#FDFDFD',
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-dark font-inter selection:bg-primary selection:text-dark overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-[100] bg-dark flex flex-col items-center justify-center">
+        <div class="relative w-40 h-40 mb-8 flex items-center justify-center">
+            <div class="absolute inset-0 border-[1px] border-primary/20 rounded-full"></div>
+            <div class="absolute inset-0 border-[1px] border-primary rounded-full border-t-transparent animate-spin-slow"></div>
+            <img src="logo-white.png" alt="Asotech Logo" class="w-20 h-20 object-contain">
+        </div>
+        <div class="overflow-hidden">
+            <h2 class="text-white font-outfit text-xl tracking-[0.4em] uppercase translate-y-full" id="loader-text">Asotech Homes</h2>
+        </div>
+        <div class="mt-6 w-12 h-[1px] bg-primary/40"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-10 md:px-24 flex justify-between items-center bg-dark/90 backdrop-blur-md border-b border-white/10">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="h-10 md:h-16 overflow-hidden flex items-center">
+                <img src="logo-white.png" alt="Asotech" class="h-[250%] w-auto object-contain">
+            </div>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-10">
+            <a href="index.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors">Home</a>
+            <a href="about.html" class="nav-link text-sm uppercase tracking-widest text-primary border-b border-primary transition-colors">About Us</a>
+            <a href="properties.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors">Properties</a>
+            <a href="gallery.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold uppercase text-xs tracking-widest">Contact Us</a>
+        </div>
+        
+        <button class="md:hidden text-white text-2xl" id="menu-btn">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-dark/95 backdrop-blur-2xl translate-x-full transition-transform duration-700 md:hidden flex flex-col p-6">
+        <div class="flex justify-between items-center mb-8">
+            <img src="logo-white.png" alt="Asotech" class="h-16">
+            <button class="text-white text-xl" id="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col items-center text-center gap-3 mb-8">
+            <a href="index.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Home</a>
+            <a href="about.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-primary">About</a>
+            <a href="properties.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Properties</a>
+            <a href="gallery.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Contact</a>
+        </div>
+
+        <div class="mt-auto space-y-5 flex flex-col items-center text-center">
+            <div class="space-y-2 flex flex-col items-center">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Reach Out</span>
+                <p class="text-white text-sm">+234 811 797 5700</p>
+                <p class="text-white/50 text-xs">info@asotechconstruction.com</p>
+            </div>
+            
+            <div class="space-y-2 flex flex-col items-center">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Follow Us</span>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.facebook.com/share/1B6aqpwyzZ/?mibextid=wwXIfr" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/asotechhomes?igsh=MXRpbXlvNHZjMnBtMQ==" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ASOTECHHOMES" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inner Hero -->
+    <section class="relative pt-40 pb-24 md:pt-60 md:pb-40 bg-dark overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="assets/images/architectural.png" alt="Background" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-10 md:px-24 relative z-10">
+            <div class="max-w-4xl">
+                <span class="text-primary font-outfit uppercase tracking-[0.4em] text-base md:text-base mb-4 block">The Asotech Story</span>
+                <h1 class="text-4xl md:text-8xl font-outfit font-bold leading-[1.1] text-white mb-8">
+                    Building a <span class="text-primary">Sustainable</span> Future for Nigeria.
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Content -->
+        <section class="py-24 md:py-40 bg-white">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Who We Are</span>
+                            <h2 class="text-4xl md:text-6xl font-outfit font-bold text-dark leading-tight">Leading with <br> <span class="text-primary">Integrity & Innovation.</span></h2>
+                        </div>
+                        <p class="text-dark/70 text-lg leading-relaxed">
+                            Asotech homes is a real estate company specialized in providing premium Real Estate solutions tailored to meet your unique needs. Our growth is anchored on trust, transparency, and an unwavering commitment to quality. We specialize in delivering high-value infrastructure and residential projects that meet global standards of excellence.
+                        </p>
+                        <p class="text-dark/70 text-lg leading-relaxed">
+                            With a proven track record in executing complex designs, ASOTECH consistently deploys world-class technical expertise and innovation to create lasting value for investors, homeowners, and communities alike.
+                        </p>
+                    </div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-video lg:aspect-square">
+                        <img src="assets/images/hero.png" alt="Our Work" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="py-24 md:py-40 bg-accent/30">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="p-12 bg-white rounded-3xl shadow-xl border border-primary/10">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary text-3xl mb-8">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold font-outfit mb-6">Our Vision</h3>
+                        <p class="text-dark/60 text-lg leading-relaxed">To build high-quality, innovative, and sustainable homes that enhance modern living and create lasting value for our customers.</p>
+                    </div>
+                    <div class="p-12 bg-dark rounded-3xl shadow-xl">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary text-3xl mb-8">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold font-outfit mb-6 text-white">Our Mission</h3>
+                        <p class="text-white/60 text-lg leading-relaxed">We build trust through construction, maintain, and satisfy your interest by providing a unique investment opportunity that will give you good Returns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="py-24 md:py-40 bg-white">
+            <div class="container mx-auto px-10 md:px-24 text-center">
+                <div class="mb-20 space-y-4">
+                    <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Our Principles</span>
+                    <h2 class="text-4xl md:text-6xl font-outfit font-bold text-dark">Core Values</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-10 border border-accent rounded-3xl hover-glow transition-all">
+                        <i class="fa-solid fa-shield-heart text-primary text-4xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4 font-outfit">Trust & Integrity</h4>
+                        <p class="text-sm text-dark/50">Building transparency in every deal.</p>
+                    </div>
+                    <div class="p-10 border border-accent rounded-3xl hover-glow transition-all">
+                        <i class="fa-solid fa-award text-primary text-4xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4 font-outfit">Excellence</h4>
+                        <p class="text-sm text-dark/50">Infrastructure that meets global standards.</p>
+                    </div>
+                    <div class="p-10 border border-accent rounded-3xl hover-glow transition-all">
+                        <i class="fa-solid fa-users text-primary text-4xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4 font-outfit">Customer First</h4>
+                        <p class="text-sm text-dark/50">Tailoring solutions to unique needs.</p>
+                    </div>
+                    <div class="p-10 border border-accent rounded-3xl hover-glow transition-all">
+                        <i class="fa-solid fa-leaf text-primary text-4xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4 font-outfit">Sustainability</h4>
+                        <p class="text-sm text-dark/50">Eco-friendly and innovative designs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-dark">
+        <div class="container mx-auto px-10 md:px-24">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-12 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <img src="logo-white.png" alt="Asotech" class="h-20 md:h-28">
+                </div>
+                <div class="flex gap-8 text-sm uppercase tracking-widest text-white/50">
+                    <a href="about.html" class="hover:text-primary transition-all">About</a>
+                    <a href="properties.html" class="hover:text-primary transition-all">Properties</a>
+                    <a href="contact.html" class="hover:text-primary transition-all">Contact</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30 uppercase tracking-widest text-center md:text-left">
+                <p>&copy; 2026 Asotech Construction Limited. Real Estate & Civil Engineering Excellence.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/share/1B6aqpwyzZ/?mibextid=wwXIfr" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/asotechhomes?igsh=MXRpbXlvNHZjMnBtMQ==" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@ASOTECHHOMES" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asotech Construction Limited | Luxury Real Estate & Sustainable Homes</title>
+    <meta name="description" content="Asotech Construction Limited (Asotech Homes) - Nigeria's premier real estate development firm. Building high-quality, innovative, and sustainable homes in Abuja.">
+    
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB400',
+                        secondary: '#D4AF37',
+                        dark: '#111111',
+                        charcoal: '#333333',
+                        accent: '#F4F4F4',
+                        light: '#FDFDFD',
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body class="bg-white text-dark font-inter selection:bg-primary selection:text-dark overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-[100] bg-dark flex flex-col items-center justify-center">
+        <div class="relative w-40 h-40 mb-8 flex items-center justify-center">
+            <!-- Circular Border from Reference -->
+            <div class="absolute inset-0 border-[1px] border-primary/20 rounded-full"></div>
+            <div class="absolute inset-0 border-[1px] border-primary rounded-full border-t-transparent animate-spin-slow"></div>
+            <!-- Logo -->
+            <img src="logo-white.png" alt="Asotech Logo" class="w-20 h-20 object-contain">
+        </div>
+        <div class="overflow-hidden">
+            <h2 class="text-white font-outfit text-xl tracking-[0.4em] uppercase translate-y-full" id="loader-text">Asotech Homes</h2>
+        </div>
+        <div class="mt-6 w-12 h-[1px] bg-primary/40"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-10 md:px-24 flex justify-between items-center bg-transparent">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="h-10 md:h-16 overflow-hidden flex items-center">
+                <img src="logo-white.png" alt="Asotech" class="h-[250%] w-auto object-contain transition-all duration-300" id="main-logo">
+            </div>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-10">
+            <a href="index.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors" id="nav-item">Home</a>
+            <a href="about.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors" id="nav-item">About Us</a>
+            <a href="properties.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors" id="nav-item">Properties</a>
+            <a href="gallery.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors" id="nav-item">Gallery</a>
+            <a href="contact.html" class="px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold uppercase text-xs tracking-widest">Contact Us</a>
+        </div>
+        
+        <button class="md:hidden text-white text-2xl" id="menu-btn">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-dark/95 backdrop-blur-2xl translate-x-full transition-transform duration-700 md:hidden flex flex-col p-6">
+        <div class="flex justify-between items-center mb-8">
+            <img src="logo-white.png" alt="Asotech" class="h-16">
+            <button class="text-white text-xl" id="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col items-center text-center gap-3 mb-8">
+            <a href="index.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Home</a>
+            <a href="about.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">About</a>
+            <a href="properties.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Properties</a>
+            <a href="gallery.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-primary">Contact</a>
+        </div>
+
+        <div class="mt-auto space-y-5 flex flex-col items-center text-center">
+            <div class="space-y-2 flex flex-col items-center">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Reach Out</span>
+                <p class="text-white text-sm">+234 811 797 5700</p>
+                <p class="text-white/50 text-xs">info@asotechconstruction.com</p>
+            </div>
+            
+            <div class="space-y-2 flex flex-col items-center">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Follow Us</span>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.facebook.com/share/1B6aqpwyzZ/?mibextid=wwXIfr" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/asotechhomes?igsh=MXRpbXlvNHZjMnBtMQ==" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ASOTECHHOMES" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img src="assets/images/hero.png" alt="Luxury Skyscraper" class="w-full h-full object-cover scale-110 brightness-50" id="hero-img">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-transparent to-dark"></div>
+            
+            <!-- Animated Grid Pattern -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik02MCAwaC0xdjYwSDBWNTlINjB6IiBmaWxsPSIjRkZCNDAwIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-30 service-grid-anim mix-blend-screen pointer-events-none"></div>
+            
+            <!-- Glittering Dots -->
+            <div class="absolute inset-0 glitter-layer-1 opacity-80 pointer-events-none"></div>
+            <div class="absolute inset-0 glitter-layer-2 opacity-80 pointer-events-none"></div>
+        </div>
+        
+        <div class="container mx-auto px-10 md:px-24 relative z-10 text-center mt-[35vh]">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 mt-4 md:mt-8" id="hero-btns">
+                <a href="properties.html" class="group relative px-6 py-3 md:px-10 md:py-5 bg-primary text-dark font-bold uppercase text-sm tracking-widest overflow-hidden transition-all hover:scale-105">
+                    <span class="relative z-10">View Projects</span>
+                    <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                </a>
+                <a href="#contact" class="px-6 py-3 md:px-10 md:py-5 border border-white/30 hover:border-primary text-white font-bold uppercase text-sm tracking-widest transition-all hover:scale-105">
+                    Get Consultation
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10" id="scroll-indicator">
+            <span class="text-[10px] uppercase tracking-[0.3em] text-white/50">Scroll To Explore</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+        </div>
+        
+        <!-- Floating Shapes (Subtle Parallax) -->
+        <div class="absolute top-1/4 left-10 w-20 h-20 border border-primary/20 rounded-full animate-pulse-slow pointer-events-none hidden md:block" data-speed="0.02"></div>
+        <div class="absolute bottom-1/4 right-20 w-32 h-32 border border-white/10 rotate-45 pointer-events-none hidden md:block" data-speed="0.05"></div>
+    </section>
+
+    <!-- Smooth Scroll Wrapper (Lenis) -->
+    <main id="main-content">
+        
+        <!-- About Section -->
+        <section id="about" class="py-24 md:py-40 relative overflow-hidden">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative" id="about-img-container">
+                    <div class="relative z-10 rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-video lg:aspect-square">
+                        <img src="assets/images/luxury-detached.jpg" alt="Architectural Excellence" class="w-full h-full object-cover">
+                    </div>
+                        <!-- Decorative element -->
+                        <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-0"></div>
+                        <div class="absolute top-10 -left-10 p-8 bg-white shadow-2xl border border-accent rounded-2xl z-20 hidden md:block">
+                            <span class="text-4xl font-bold text-primary block mb-1">15+</span>
+                            <span class="text-xs uppercase tracking-widest text-dark/70">Years of Experience</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Real Estate & Construction</span>
+                            <h2 class="text-4xl md:text-6xl font-outfit font-bold leading-tight text-dark">Excellence in Every <br> <span class="text-primary">Square Inch.</span></h2>
+                        </div>
+                        <div class="space-y-6">
+                            <p class="text-dark/60 text-lg leading-relaxed max-w-xl">
+                                Asotech homes is a real estate company specialized in providing premium Real Estate solutions tailored to meet your unique needs. Our growth is anchored on trust, transparency, and an unwavering commitment to quality. We specialize in delivering high-value infrastructure and residential projects that meet global standards of excellence. With a proven track record in executing complex designs, ASOTECH consistently deploys world-class technical expertise and innovation to create lasting value for investors, homeowners, and communities alike.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-3">
+                                    <h4 class="text-primary font-bold uppercase text-xs tracking-widest border-b border-primary/20 pb-2 inline-block">Our Vision</h4>
+                                    <p class="text-dark/60 text-sm italic">To build high-quality, innovative, and sustainable homes that enhance modern living and create lasting value for our customers.</p>
+                                </div>
+                                <div class="space-y-3">
+                                    <h4 class="text-primary font-bold uppercase text-xs tracking-widest border-b border-primary/20 pb-2 inline-block">Our Mission</h4>
+                                    <p class="text-dark/60 text-sm italic">We build trust through construction, maintain, and satisfy your interest by providing a unique investment opportunity that will give you good Returns.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-8 pt-8 border-t border-accent">
+                            <div>
+                                <h4 class="text-3xl font-bold text-dark mb-2 counter" data-target="250">0</h4>
+                                <p class="text-xs uppercase tracking-widest text-dark/50">Projects Completed</p>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold text-dark mb-2 counter" data-target="50">0</h4>
+                                <p class="text-xs uppercase tracking-widest text-dark/50">Ongoing Estates</p>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold text-dark mb-2 counter" data-target="1000">0</h4>
+                                <p class="text-xs uppercase tracking-widest text-dark/50">Happy Families</p>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold text-dark mb-2 counter" data-target="12">0</h4>
+                                <p class="text-xs uppercase tracking-widest text-dark/50">Cities Covered</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <a href="#contact" class="inline-flex items-center gap-4 text-primary font-bold uppercase text-xs tracking-[0.3em] group">
+                                Learn More About Us
+                                <span class="w-12 h-[1px] bg-primary group-hover:w-20 transition-all duration-500"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 md:py-40 bg-dark relative overflow-hidden">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                <!-- Glowing Orbs -->
+                <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-primary/5 rounded-full blur-[120px] float-anim mix-blend-screen"></div>
+                <div class="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-secondary/5 rounded-full blur-[150px] float-anim mix-blend-screen" style="animation-duration: 10s; animation-delay: -3s;"></div>
+                
+                <!-- Animated Grid Pattern -->
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik02MCAwaC0xdjYwSDBWNTlINjB6IiBmaWxsPSIjRkZCNDAwIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-20 service-grid-anim"></div>
+                
+                <!-- Glittering Dots -->
+                <div class="absolute inset-0 glitter-layer-1"></div>
+                <div class="absolute inset-0 glitter-layer-2"></div>
+            </div>
+            
+            <div class="container mx-auto px-10 md:px-24 relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-20">
+                    <div class="space-y-4">
+                        <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Our Expertise</span>
+                        <h2 class="text-4xl md:text-6xl font-outfit font-bold text-white">Engineering <br> <span class="text-primary">Excellence.</span></h2>
+                    </div>
+                    <p class="text-white/40 max-w-md text-sm uppercase tracking-widest leading-loose">Comprehensive solutions for the modern built environment.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: Housing Construction -->
+                    <div class="service-card group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 relative overflow-hidden">
+                        <div class="w-14 h-14 md:w-20 md:h-20 rounded-3xl bg-primary/10 flex items-center justify-center text-primary text-2xl md:text-4xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold font-outfit mb-4 text-white">Housing Construction</h4>
+                        <p class="text-white/40 leading-relaxed text-sm group-hover:text-white/70 transition-colors">Specialized building services for luxury villas and smart homes, maintaining global standards of excellence.</p>
+                    </div>
+                    
+                    <!-- Service 2: Property Sales -->
+                    <div class="service-card group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 relative overflow-hidden">
+                        <div class="w-14 h-14 md:w-20 md:h-20 rounded-3xl bg-primary/10 flex items-center justify-center text-primary text-2xl md:text-4xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold font-outfit mb-4 text-white">Property Sales</h4>
+                        <p class="text-white/40 leading-relaxed text-sm group-hover:text-white/70 transition-colors">Direct sales of premium estate lands, luxury apartments, and commercial spaces in prime locations.</p>
+                    </div>
+
+                    <!-- Service 3: Civil Engineering -->
+                    <div class="service-card group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 relative overflow-hidden">
+                        <div class="w-14 h-14 md:w-20 md:h-20 rounded-3xl bg-primary/10 flex items-center justify-center text-primary text-2xl md:text-4xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold font-outfit mb-4 text-white">Civil Engineering</h4>
+                        <p class="text-white/40 leading-relaxed text-sm group-hover:text-white/70 transition-colors">Delivering high-value infrastructure projects with world-class technical expertise and innovation.</p>
+                    </div>
+
+                    <!-- Service 4: Real Estate Development -->
+                    <div class="service-card group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 relative overflow-hidden">
+                        <div class="w-14 h-14 md:w-20 md:h-20 rounded-3xl bg-primary/10 flex items-center justify-center text-primary text-2xl md:text-4xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold font-outfit mb-4 text-white">Development</h4>
+                        <p class="text-white/40 leading-relaxed text-sm group-hover:text-white/70 transition-colors">Crafting high-quality, innovative, and sustainable residential estates that enhance modern living.</p>
+                    </div>
+
+                    <!-- Service 5: Investment Consultation -->
+                    <div class="service-card group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 relative overflow-hidden">
+                        <div class="w-14 h-14 md:w-20 md:h-20 rounded-3xl bg-primary/10 flex items-center justify-center text-primary text-2xl md:text-4xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold font-outfit mb-4 text-white">Investments</h4>
+                        <p class="text-white/40 leading-relaxed text-sm group-hover:text-white/70 transition-colors">Expert guidance on real estate investments that provide guaranteed returns and create lasting value.</p>
+                    </div>
+
+                    <!-- Service 6: Architectural Design -->
+                    <div class="service-card group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 relative overflow-hidden">
+                        <div class="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center text-primary text-4xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold font-outfit mb-4 text-white">Design & Interiors</h4>
+                        <p class="text-white/40 leading-relaxed text-sm group-hover:text-white/70 transition-colors">Merging innovative aesthetics with functional modern living spaces and premium interior finishes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Estates Grid -->
+        <section id="estates" class="py-24 md:py-40 bg-accent/20 relative overflow-hidden">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+                    <div class="space-y-4">
+                        <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Portfolio Grid</span>
+                        <h2 class="text-4xl md:text-6xl font-outfit font-bold text-dark">Our Premium <span class="text-primary">Estates</span></h2>
+                    </div>
+                    <p class="text-dark/50 max-w-md text-sm md:text-base">Explore our meticulously planned residential communities designed for the modern Nigerian family.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Estate 1: Asotech Sweet Homes -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/architectural.png" alt="Asotech Sweet Homes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-primary text-dark font-bold text-[10px] uppercase tracking-widest rounded-full z-10">Selling Fast</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1">Asotech Sweet Homes</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Katampe Main, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Modern Terraces</span>
+                                <a href="properties.html?estate=sweet-homes" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Estate 2: Harmony Hills -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/HARMONY HILLS 4 BEDROOM FULLY-DETACHED DUPLEX  320sqm.png" alt="Harmony Hills" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-dark text-white font-bold text-[10px] uppercase tracking-widest rounded-full z-10">Ongoing</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1">Harmony Hills</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Katampe Extension, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Luxury Duplexes</span>
+                                <a href="properties.html?estate=harmony-hills" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Estate 3: Vine City -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/5 BEDROOM FULLY-DETACHED DUPLEX  450sqm vine city.png" alt="Vine City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-primary text-dark font-bold text-[10px] uppercase tracking-widest rounded-full z-10">New Launch</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1">Vine City</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Apo Wasa, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Smart Homes</span>
+                                <a href="properties.html?estate=vine-city" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estate 4: Rehoboth City -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/4 Bedroom Semi-detached Duplex  250sqm light city.png" alt="Rehoboth City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-dark text-white font-bold text-[10px] uppercase tracking-widest rounded-full z-10">Prime Location</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1 text-uppercase">Rehoboth City</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Life Camp, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Residential Estate</span>
+                                <a href="properties.html?estate=rehoboth-city" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estate 5: De View -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/4 BEDROOM SEMI-DETACHED DUPLEX 250sqm DE VIEW.png" alt="De View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-primary text-dark font-bold text-[10px] uppercase tracking-widest rounded-full z-10">Premium View</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1 text-uppercase">De View</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Gwarimpa II, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Luxury Apartments</span>
+                                <a href="properties.html?estate=de-view" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estate 6: Asotech Luxury Homes -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/luxury-detached.jpg" alt="Asotech Luxury Homes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-dark text-white font-bold text-[10px] uppercase tracking-widest rounded-full z-10">Exclusive</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1">Asotech Luxury Homes</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Kukwaba, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Premium Living</span>
+                                <a href="properties.html?estate=luxury-homes" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estate 7: Light City -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/5 Bedroom Fully-detached Duplex 500sqm light city.png" alt="Light City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-primary text-dark font-bold text-[10px] uppercase tracking-widest rounded-full z-10">Selling</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1 text-uppercase">Light City</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Idu, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Modern Community</span>
+                                <a href="properties.html?estate=light-city" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estate 8: Asotech Villa -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/Asotech Villa 5 BEDROOM FULLY-DETACHED DUPLEX 500Sqm.png" alt="Asotech Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-dark text-white font-bold text-[10px] uppercase tracking-widest rounded-full z-10">High Value</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1 text-uppercase">Asotech Villa</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Jabi, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Luxury Villas</span>
+                                <a href="properties.html?estate=asotech-villa" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estate 9: Bricks City -->
+                    <div class="estate-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/Brick City 4 Bedroom Semi-Detached Duplex – 350SQM.png" alt="Bricks City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-6 left-6 px-4 py-2 bg-primary text-dark font-bold text-[10px] uppercase tracking-widest rounded-full z-10">Completed</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold font-outfit text-dark mb-1 text-uppercase">Bricks City</h3>
+                            <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                <i class="fa-solid fa-location-dot text-primary"></i> Kubwa, Abuja
+                            </p>
+                            <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-dark/40 font-bold">Affordable Luxury</span>
+                                <a href="properties.html?estate=bricks-city" class="text-primary hover:text-dark transition-colors"><i class="fa-solid fa-arrow-right-long text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects" class="py-24 md:py-40 bg-white overflow-hidden">
+            <div class="container mx-auto px-10 md:px-24 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div class="space-y-4">
+                    <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Our Portfolio</span>
+                    <h2 class="text-4xl md:text-6xl font-outfit font-bold text-dark">Iconic <span class="text-primary">Developments</span></h2>
+                </div>
+                <div class="flex gap-4">
+                    <button class="swiper-prev w-14 h-14 rounded-full border border-accent flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="swiper-next w-14 h-14 rounded-full border border-accent flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="swiper project-swiper px-6 md:px-0">
+                <div class="swiper-wrapper">
+                    <!-- Project 1 -->
+                    <div class="swiper-slide group cursor-pointer lg:ml-6">
+                        <div class="relative overflow-hidden rounded-2xl aspect-[16/10] shadow-xl">
+                            <img src="assets/images/HARMONY HILLS 4 BEDROOM FULLY-DETACHED DUPLEX  320sqm.png" alt="Harmony Hills" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <span class="text-primary uppercase tracking-widest text-xs mb-2">Luxury Estate</span>
+                                <h4 class="text-2xl font-bold font-outfit text-white">Harmony Hills</h4>
+                                <p class="text-white/60 text-sm mt-2">Katampe Extension, Abuja</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="swiper-slide group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-2xl aspect-[16/10] shadow-xl">
+                            <img src="assets/images/ASOTECH VILLA apartment.png" alt="Sweet Homes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <span class="text-primary uppercase tracking-widest text-xs mb-2">Residential</span>
+                                <h4 class="text-2xl font-bold font-outfit text-white">Asotech Sweet Homes</h4>
+                                <p class="text-white/60 text-sm mt-2">Katampe Main, Abuja</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="swiper-slide group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-2xl aspect-[16/10] shadow-xl">
+                            <img src="assets/images/5 BEDROOM FULLY-DETACHED DUPLEX  450sqm vine city.png" alt="Vine City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <span class="text-primary uppercase tracking-widest text-xs mb-2">Sustainable Living</span>
+                                <h4 class="text-2xl font-bold font-outfit text-white">Vine City</h4>
+                                <p class="text-white/60 text-sm mt-2">Apo Wasa, Abuja</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="swiper-slide group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-2xl aspect-[16/10] shadow-xl">
+                            <img src="assets/images/Brick City 4 Bedroom Semi-Detached Duplex – 350SQM.png" alt="Bricks City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <span class="text-primary uppercase tracking-widest text-xs mb-2">Urban Development</span>
+                                <h4 class="text-2xl font-bold font-outfit text-white">Asotech Bricks City</h4>
+                                <p class="text-white/60 text-sm mt-2">Kubwa, Abuja</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why-us" class="py-24 md:py-40 relative bg-dark">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Why Partner With Us</span>
+                            <h2 class="text-4xl md:text-6xl font-outfit font-bold text-white">Unmatched Quality <br> In Every Build.</h2>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-6 items-start p-6 bg-white/5 shadow-lg rounded-2xl border border-white/10 hover-glow transition-all duration-300">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-shield-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Trusted Expertise</h4>
+                                    <p class="text-white/50">Decades of combined experience in high-end construction and real estate.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-6 items-start p-6 bg-white/5 shadow-lg rounded-2xl border border-white/10 hover-glow transition-all duration-300">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Timely Delivery</h4>
+                                    <p class="text-white/50">We respect your time. Our project management systems ensure on-schedule completion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl aspect-video lg:aspect-auto lg:h-full">
+                            <img src="assets/images/architectural.png" alt="Why Choose Us" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 p-8 bg-dark shadow-2xl border border-white/10 rounded-2xl hidden md:block">
+                            <div class="flex flex-col items-center">
+                                <span class="text-5xl font-bold text-primary">100%</span>
+                                <span class="text-[10px] uppercase tracking-widest text-white/70">Client Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-24 md:py-40 bg-white relative">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="text-center mb-20 space-y-4">
+                    <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm">Our Methodology</span>
+                    <h2 class="text-4xl md:text-6xl font-outfit font-bold text-dark">The Asotech Way</h2>
+                </div>
+                
+                <div class="relative flex flex-col md:flex-row justify-between gap-8 md:gap-4">
+                    <div class="absolute top-1/2 left-0 w-full h-[1px] bg-accent -translate-y-1/2 hidden md:block"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="process-step relative z-10 bg-white p-8 shadow-xl border border-accent rounded-2xl flex-1 text-center group hover:border-primary transition-all duration-500">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white font-bold text-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">01</div>
+                        <h4 class="text-xl font-bold mb-3 text-dark">Consultation</h4>
+                        <p class="text-dark/50 text-sm">Understanding your vision and defining the project scope.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-step relative z-10 bg-white p-8 shadow-xl border border-accent rounded-2xl flex-1 text-center group hover:border-primary transition-all duration-500">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white font-bold text-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">02</div>
+                        <h4 class="text-xl font-bold mb-3 text-dark">Planning</h4>
+                        <p class="text-dark/50 text-sm">Strategic feasibility studies and logistical mapping.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-step relative z-10 bg-white p-8 shadow-xl border border-accent rounded-2xl flex-1 text-center group hover:border-primary transition-all duration-500">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white font-bold text-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">03</div>
+                        <h4 class="text-xl font-bold mb-3 text-dark">Execution</h4>
+                        <p class="text-dark/50 text-sm">Meticulous construction and real estate delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-24 md:py-40 relative bg-dark overflow-hidden">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="text-center mb-20">
+                    <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm block mb-4">Client Feedback</span>
+                    <h2 class="text-4xl md:text-6xl font-outfit font-bold text-white">Trust Built on Quality</h2>
+                </div>
+                
+                <div class="swiper testimonial-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide p-8 md:p-12 bg-white/5 shadow-2xl rounded-3xl border border-white/10">
+                            <i class="fa-solid fa-quote-left text-4xl text-primary/20 mb-8"></i>
+                            <p class="text-xl md:text-2xl text-white/80 italic mb-8">"Asotech delivered our luxury estate on time and with impeccable finish. Their dual expertise in construction and real estate development is unmatched in Nigeria."</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fa-solid fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-lg text-white">Dr. Emmanuel Okoro</h5>
+                                    <p class="text-white/50 text-sm">CEO, TechVision Nigeria</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Calculator -->
+        <section id="calculator" class="py-24 md:py-40 bg-[#FDFDFD] relative overflow-hidden">
+            <div class="container mx-auto px-10 md:px-24">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="text-primary font-outfit uppercase tracking-[0.3em] text-sm calc-reveal">Calculate Your ROI</span>
+                    <h2 class="text-4xl md:text-6xl font-outfit font-bold text-dark calc-reveal">Investment <span class="text-primary">Calculator</span></h2>
+                    <p class="text-dark/50 max-w-xl mx-auto text-sm calc-reveal">Visualize the potential returns on your premium real estate investment with Asotech.</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 shadow-2xl border border-accent calc-reveal">
+                    <!-- Inputs Column -->
+                    <div class="w-full lg:flex-1 space-y-8">
+                        <!-- Investment Amount -->
+                        <div class="space-y-3">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-1 sm:gap-4">
+                                <label class="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-dark/60">Initial Investment</label>
+                                <span class="text-primary font-bold text-lg sm:text-xl font-outfit" id="val-amount">₦50,000,000</span>
+                            </div>
+                            <input type="range" id="calc-amount" min="10000000" max="500000000" step="1000000" value="50000000" class="w-full custom-slider">
+                        </div>
+
+                        <!-- Expected Appreciation -->
+                        <div class="space-y-3">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-1 sm:gap-4">
+                                <label class="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-dark/60">Annual Appreciation</label>
+                                <span class="text-primary font-bold text-lg sm:text-xl font-outfit" id="val-appreciation">15%</span>
+                            </div>
+                            <input type="range" id="calc-appreciation" min="5" max="50" step="1" value="15" class="w-full custom-slider">
+                        </div>
+
+                        <!-- Rental Yield -->
+                        <div class="space-y-3">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-1 sm:gap-4">
+                                <label class="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-dark/60">Annual Rental Yield</label>
+                                <span class="text-primary font-bold text-lg sm:text-xl font-outfit" id="val-yield">8%</span>
+                            </div>
+                            <input type="range" id="calc-yield" min="0" max="25" step="1" value="8" class="w-full custom-slider">
+                        </div>
+
+                        <!-- Duration -->
+                        <div class="space-y-3">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-1 sm:gap-4">
+                                <label class="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-dark/60">Investment Duration</label>
+                                <span class="text-primary font-bold text-lg sm:text-xl font-outfit" id="val-duration">5 Years</span>
+                            </div>
+                            <input type="range" id="calc-duration" min="1" max="20" step="1" value="5" class="w-full custom-slider">
+                        </div>
+                    </div>
+
+                    <!-- Results Column -->
+                    <div class="w-full lg:flex-1 bg-dark rounded-2xl md:rounded-3xl p-8 md:p-12 text-white relative overflow-hidden flex flex-col justify-center gap-6 md:gap-8 shadow-inner group">
+                        <!-- Decorative bg -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-0 transition-transform duration-700 group-hover:scale-150"></div>
+                        <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-0 transition-transform duration-700 group-hover:scale-150"></div>
+                        
+                        <div class="relative z-10 space-y-2">
+                            <span class="text-[10px] uppercase tracking-widest text-white/40">Projected Property Value</span>
+                            <h3 class="text-2xl sm:text-3xl md:text-5xl font-outfit font-bold text-white break-words" id="res-value">₦0</h3>
+                        </div>
+
+                        <div class="relative z-10 space-y-2">
+                            <span class="text-[10px] uppercase tracking-widest text-white/40">Total Rental Income</span>
+                            <h3 class="text-xl sm:text-2xl md:text-4xl font-outfit font-bold text-primary break-words" id="res-rent">₦0</h3>
+                        </div>
+
+                        <div class="relative z-10 pt-6 md:pt-8 border-t border-white/10 space-y-2">
+                            <span class="text-[10px] uppercase tracking-widest text-white/40">Total ROI</span>
+                            <h3 class="text-4xl sm:text-5xl md:text-6xl font-outfit font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary" id="res-roi">0%</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 md:py-32 relative overflow-hidden bg-primary">
+            <div class="container mx-auto px-10 md:px-24 text-center space-y-10 relative z-10">
+                <h2 class="text-4xl md:text-7xl font-outfit font-bold max-w-4xl mx-auto text-white">Ready to Build Your <span class="text-dark">Vision?</span></h2>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="#contact" class="px-12 py-6 bg-dark text-white font-bold uppercase tracking-widest hover:scale-105 transition-all">Start A Project</a>
+                    <a href="tel:+2348117975700" class="px-12 py-6 border border-white/20 text-white hover:bg-white hover:text-dark font-bold uppercase tracking-widest transition-all">Consult Our Experts</a>
+                </div>
+            </div>
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <img src="assets/images/architectural.png" alt="Overlay" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-dark">
+        <div class="container mx-auto px-10 md:px-24">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-12 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <img src="logo-white.png" alt="Asotech" class="h-20 md:h-28">
+                </div>
+                <div class="flex gap-8 text-sm uppercase tracking-widest text-white/50">
+                    <a href="about.html" class="hover:text-primary transition-all">About</a>
+                    <a href="properties.html" class="hover:text-primary transition-all">Properties</a>
+                    <a href="contact.html" class="hover:text-primary transition-all">Contact</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30 uppercase tracking-widest">
+                <p>&copy; 2026 Asotech Construction Company Nigeria Limited. Real Estate & Civil Engineering Excellence.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/share/1B6aqpwyzZ/?mibextid=wwXIfr" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/asotechhomes?igsh=MXRpbXlvNHZjMnBtMQ==" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@ASOTECHHOMES" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/2348117975700" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-12 h-12 md:w-16 md:h-16 bg-[#25D366] rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-2xl z-[90] hover:scale-110 transition-all">
+        <i class="fa-brands fa-whatsapp text-white"></i>
+    </a>
+
+    <!-- VIP Investor Modal -->
+    <div id="vip-modal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-dark/80 backdrop-blur-md" id="vip-close-bg"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative w-[90%] max-w-5xl bg-dark rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row transform scale-95 transition-transform duration-500 border border-white/10" id="vip-modal-content">
+            
+            <!-- Close Button -->
+            <button id="vip-close-btn" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark transition-all z-20">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Image Side -->
+            <div class="hidden md:block w-1/2 relative overflow-hidden">
+                <img src="assets/images/luxury-detached.jpg" alt="VIP Access" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-dark"></div>
+            </div>
+
+            <!-- Form Side -->
+            <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center relative">
+                <!-- Glowing Orb Background -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div id="vip-form-container" class="relative z-10 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-primary font-outfit uppercase tracking-[0.3em] text-xs font-bold">Exclusive Access</span>
+                        <h3 class="text-3xl md:text-5xl font-outfit font-bold text-white leading-tight">Join The VIP <br> Investor Club.</h3>
+                        <p class="text-white/50 text-sm leading-relaxed">Be the first to receive pre-launch pricing, off-market listings, and exclusive floorplans before they go public.</p>
+                    </div>
+
+                    <form id="vip-form" class="space-y-8 mt-8">
+                        <div class="relative">
+                            <input type="text" id="vip-name" required class="w-full bg-transparent border-b border-white/20 py-2 text-white text-lg focus:outline-none focus:border-primary transition-colors peer" placeholder=" ">
+                            <label for="vip-name" class="absolute left-0 top-2 text-white/40 text-lg transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-primary peer-valid:-top-5 peer-valid:text-xs peer-valid:text-primary pointer-events-none">Full Name</label>
+                        </div>
+                        <div class="relative">
+                            <input type="email" id="vip-email" required class="w-full bg-transparent border-b border-white/20 py-2 text-white text-lg focus:outline-none focus:border-primary transition-colors peer" placeholder=" ">
+                            <label for="vip-email" class="absolute left-0 top-2 text-white/40 text-lg transition-all peer-focus:-top-5 peer-focus:text-xs peer-focus:text-primary peer-valid:-top-5 peer-valid:text-xs peer-valid:text-primary pointer-events-none">Email Address</label>
+                        </div>
+                        <button type="submit" class="w-full py-4 mt-6 bg-primary text-dark font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-transform shadow-[0_0_20px_rgba(255,180,0,0.3)] hover:shadow-[0_0_30px_rgba(255,180,0,0.5)]">Get VIP Access</button>
+                    </form>
+                    <p class="text-white/30 text-[10px] text-center mt-4">We respect your privacy. No spam.</p>
+                </div>
+
+                <!-- Success State (Hidden initially) -->
+                <div id="vip-success-container" class="relative z-10 hidden flex-col items-center justify-center text-center space-y-6 py-10">
+                    <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary text-4xl mb-4">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-3xl font-outfit font-bold text-white">Welcome to the Club.</h3>
+                    <p class="text-white/50 text-sm">Your exclusive investor package is on its way to your inbox.</p>
+                    <button id="vip-continue-btn" class="mt-8 px-8 py-3 border border-white/20 text-white hover:border-primary hover:text-primary transition-all text-xs uppercase tracking-widest font-bold">Continue Browsing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

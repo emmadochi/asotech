@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Asotech Construction Limited</title>
+    <meta name="description" content="Get in touch with Asotech Construction Limited. Visit our Abuja office or contact us for real estate inquiries and investment opportunities.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB400',
+                        dark: '#111111',
+                        accent: '#F4F4F4',
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-dark font-inter overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-[100] bg-dark flex flex-col items-center justify-center">
+        <div class="relative w-40 h-40 mb-8 flex items-center justify-center">
+            <div class="absolute inset-0 border-[1px] border-primary/20 rounded-full"></div>
+            <div class="absolute inset-0 border-[1px] border-primary rounded-full border-t-transparent animate-spin-slow"></div>
+            <img src="logo-white.png" alt="Asotech Logo" class="w-20 h-20 object-contain">
+        </div>
+        <div class="overflow-hidden">
+            <h2 class="text-white font-outfit text-xl tracking-[0.4em] uppercase translate-y-full" id="loader-text">Asotech Homes</h2>
+        </div>
+        <div class="mt-6 w-12 h-[1px] bg-primary/40"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-10 md:px-24 flex justify-between items-center bg-dark/90 backdrop-blur-md border-b border-white/10">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="h-10 md:h-16 overflow-hidden flex items-center">
+                <img src="logo-white.png" alt="Asotech" class="h-[250%] w-auto object-contain">
+            </div>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-10">
+            <a href="index.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors">Home</a>
+            <a href="about.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors">About Us</a>
+            <a href="properties.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors">Properties</a>
+            <a href="gallery.html" class="nav-link text-sm uppercase tracking-widest text-white hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold uppercase text-xs tracking-widest">Contact Us</a>
+        </div>
+        
+        <button class="md:hidden text-white text-2xl" id="menu-btn">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-dark/95 backdrop-blur-2xl translate-x-full transition-transform duration-700 md:hidden flex flex-col p-6">
+        <div class="flex justify-between items-center mb-8">
+            <img src="logo-white.png" alt="Asotech" class="h-16">
+            <button class="text-white text-xl" id="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col items-center text-center gap-3 mb-8">
+            <a href="index.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Home</a>
+            <a href="about.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">About</a>
+            <a href="properties.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Properties</a>
+            <a href="gallery.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-white hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="mobile-nav-link text-xs font-outfit font-bold uppercase tracking-widest text-primary">Contact</a>
+        </div>
+
+        <div class="mt-auto space-y-5 flex flex-col items-center text-center">
+            <div class="space-y-2 flex flex-col items-center">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Reach Out</span>
+                <p class="text-white text-sm">+234 811 797 5700</p>
+                <p class="text-white/50 text-xs">info@asotechconstruction.com</p>
+            </div>
+            
+            <div class="space-y-2 flex flex-col items-center">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Follow Us</span>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.facebook.com/share/1B6aqpwyzZ/?mibextid=wwXIfr" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/asotechhomes?igsh=MXRpbXlvNHZjMnBtMQ==" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ASOTECHHOMES" target="_blank" class="text-white/50 hover:text-primary text-sm transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <section class="relative pt-40 pb-24 md:pt-60 md:pb-32 bg-dark">
+        <div class="container mx-auto px-10 md:px-24 text-center">
+            <span class="text-primary font-outfit uppercase tracking-[0.4em] text-base md:text-base mb-4 block">Get In Touch</span>
+            <h1 class="text-4xl md:text-8xl font-outfit font-bold text-white mb-8 leading-[1.1]">Contact <span class="text-primary">Us.</span></h1>
+            <p class="text-white/50 max-w-2xl mx-auto text-base md:text-lg">We are ready to answer your questions and help you start your investment journey.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-10 md:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <!-- Contact Info -->
+                <div class="space-y-12">
+                    <div class="space-y-4">
+                        <h2 class="text-4xl font-outfit font-bold">Office <span class="text-primary">Locations</span></h2>
+                        <p class="text-dark/50">Visit us at our headquarters in Abuja for a personalized consultation.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-accent/30 rounded-3xl border border-accent">
+                            <i class="fa-solid fa-location-dot text-primary text-2xl mb-6"></i>
+                            <h4 class="text-xl font-bold font-outfit mb-2">Headquarters</h4>
+                            <p class="text-sm text-dark/60 leading-relaxed">9 Nnewi St, Garki, Abuja 900103, FCT, Nigeria.</p>
+                        </div>
+                        <div class="p-8 bg-accent/30 rounded-3xl border border-accent">
+                            <i class="fa-solid fa-phone text-primary text-2xl mb-6"></i>
+                            <h4 class="text-xl font-bold font-outfit mb-2">Phone</h4>
+                            <p class="text-sm text-dark/60">+234 811 797 5700</p>
+                            <p class="text-sm text-dark/60">+234 811 797 5800</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8 bg-dark rounded-3xl text-white">
+                        <i class="fa-solid fa-envelope text-primary text-2xl mb-6"></i>
+                        <h4 class="text-xl font-bold font-outfit mb-2">Email Us</h4>
+                        <p class="text-white/60">info@asotechconstruction.com</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl border border-accent relative">
+                    <form action="#" class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest font-bold text-dark/40">Full Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full bg-accent/50 border-b border-accent px-0 py-4 focus:border-primary outline-none transition-all">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest font-bold text-dark/40">Email Address</label>
+                                <input type="email" placeholder="john@example.com" class="w-full bg-accent/50 border-b border-accent px-0 py-4 focus:border-primary outline-none transition-all">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase tracking-widest font-bold text-dark/40">Interest</label>
+                            <select class="w-full bg-accent/50 border-b border-accent px-0 py-4 focus:border-primary outline-none transition-all appearance-none">
+                                <option>Property Inquiry</option>
+                                <option>Investment Consultation</option>
+                                <option>Site Tour Request</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase tracking-widest font-bold text-dark/40">Message</label>
+                            <textarea rows="4" placeholder="How can we help you?" class="w-full bg-accent/50 border-b border-accent px-0 py-4 focus:border-primary outline-none transition-all resize-none"></textarea>
+                        </div>
+                        <button class="w-full py-6 bg-primary text-dark font-bold uppercase tracking-[0.2em] text-sm hover:bg-dark hover:text-white transition-all duration-500 rounded-xl">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="h-[500px] w-full relative grayscale hover:grayscale-0 transition-all duration-700">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.123456789!2d7.4812345!3d9.0345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0bce624c967d%3A0xc3f1f3a2b7e90e0c!2s9%20Nnewi%20St%2C%20Garki%2C%20Abuja%20900103%2C%20Federal%20Capital%20Territory%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng" 
+            class="w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="absolute inset-0 pointer-events-none border-y border-white/10 shadow-[inset_0_0_100px_rgba(0,0,0,0.2)]"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-dark">
+        <div class="container mx-auto px-10 md:px-24 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <img src="logo-white.png" alt="Asotech" class="h-20 md:h-28">
+            </div>
+            <p class="text-white/30 text-xs uppercase tracking-[0.2em] mb-8">&copy; 2026 Asotech Construction Limited. All Rights Reserved.</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.facebook.com/share/1B6aqpwyzZ/?mibextid=wwXIfr" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/asotechhomes?igsh=MXRpbXlvNHZjMnBtMQ==" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@ASOTECHHOMES" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

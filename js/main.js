@@ -204,7 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { selector: '.estate-card', trigger: '#estates' },
         { selector: '.estate-card', trigger: '.grid' }, 
         { selector: '.process-step', trigger: '#process' },
-        { selector: '.gallery-item', trigger: '.columns-1' }
+        { selector: '.gallery-item', trigger: '.columns-1' },
+        { selector: '.faq-reveal', trigger: '#faq' }
     ];
 
     revealElements.forEach(group => {
@@ -539,6 +540,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 1500);
             });
         }
+    }
+
+    // 13. FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const btn = item.querySelector('.faq-btn');
+            const content = item.querySelector('.faq-content');
+            const icon = item.querySelector('.faq-icon i');
+
+            btn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+
+                // Close all others
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-btn').classList.remove('text-primary');
+                    otherItem.querySelector('.faq-content').style.height = '0px';
+                    const otherIcon = otherItem.querySelector('.faq-icon i');
+                    otherIcon.className = 'fa-solid fa-plus';
+                    otherIcon.parentElement.style.transform = 'rotate(0deg)';
+                });
+
+                if (!isOpen) {
+                    item.classList.add('active');
+                    btn.classList.add('text-primary');
+                    content.style.height = content.scrollHeight + 'px';
+                    icon.className = 'fa-solid fa-minus';
+                    icon.parentElement.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
     }
 
 });

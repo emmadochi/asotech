@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/style.css">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 </head>
 <body class="bg-white text-dark font-inter overflow-x-hidden">
 
@@ -232,9 +232,9 @@
                                         <div class="absolute inset-0 bg-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                             <i class="fa-solid fa-expand text-white text-3xl"></i>
                                         </div>
-                                        ${item.tags.some(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon') ? `
+                                        ${item.tags.some(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon' || tag.toLowerCase() === 'selling') ? `
                                         <div class="absolute top-6 left-6 flex flex-wrap gap-2">
-                                            ${item.tags.filter(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon').map(tag => {
+                                            ${item.tags.filter(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon' || tag.toLowerCase() === 'selling').map(tag => {
                                                 const bgClass = tag.toLowerCase() === 'sold out' ? 'bg-red-600 text-white' : 'bg-primary text-dark';
                                                 return `<span class="px-3 py-1 ${bgClass} font-bold text-[9px] uppercase tracking-widest rounded-full z-10 shadow-lg">${tag}</span>`;
                                             }).join('')}
@@ -248,9 +248,9 @@
                                 <div class="property-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 opacity-0 translate-y-10">
                                     <div class="aspect-[4/3] overflow-hidden relative">
                                         <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                        ${item.tags.some(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon') ? `
+                                        ${item.tags.some(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon' || tag.toLowerCase() === 'selling') ? `
                                         <div class="absolute top-6 left-6 flex flex-wrap gap-2">
-                                            ${item.tags.filter(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon').map(tag => {
+                                            ${item.tags.filter(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon' || tag.toLowerCase() === 'selling').map(tag => {
                                                 const bgClass = tag.toLowerCase() === 'sold out' ? 'bg-red-600 text-white' : 'bg-primary text-dark';
                                                 return `<span class="px-3 py-1 ${bgClass} font-bold text-[9px] uppercase tracking-widest rounded-full z-10 shadow-lg">${tag}</span>`;
                                             }).join('')}

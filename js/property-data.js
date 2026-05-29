@@ -37,9 +37,9 @@ const propertyData = [
         category: "Katampe",
         units: [
             { name: "4 Bedroom Fully-detached Duplex || 500sqm", price: "₦118,650,000", image: "assets/images/Harmony Hills 4 BEDROOM FULLY-DETACHED DUPLEX 500sqm.png", tags: ["Ultra-Luxury", "Prime Location"] },
-            { name: "4 Bedroom Fully-detached Duplex || 320sqm", price: "₦75,900,000", image: "assets/images/HARMONY HILLS 4 BEDROOM FULLY-DETACHED DUPLEX  320sqm.png", tags: ["Executive"] },
-            { name: "4 Bedroom Semi-detached Duplex || 250sqm", price: "₦59,280,000", image: "assets/images/HARMONY HILLS 4 BEDROOM SEMI-DETACHED DUPLEX 250sqm.png", tags: ["Modern Design"] },
-            { name: "3 Bedroom Terrace Duplex || 150sqm", price: "₦35,700,000", image: "assets/images/HARMONY HILLS 3 BEDROOM TERRACE DUPLEX 150sqm.png", tags: ["Ongoing"] }
+            { name: "5 Bedroom Fully-detached Duplex with BQ || 320sqm", price: "₦75,900,000", image: "assets/images/HARMONY HILLS 4 BEDROOM FULLY-DETACHED DUPLEX  320sqm.png", tags: ["Executive"] },
+            { name: "5 Bedroom Semi-detached Duplex with Attached BQ || 250sqm", price: "₦59,280,000", image: "assets/images/HARMONY HILLS 4 BEDROOM SEMI-DETACHED DUPLEX 250sqm.png", tags: ["Modern Design"] },
+            { name: "4 Bedroom Terrace Duplex || 150sqm", price: "₦35,700,000", image: "assets/images/HARMONY HILLS 3 BEDROOM TERRACE DUPLEX 150sqm.png", tags: ["Ongoing"] }
         ]
     },
     {

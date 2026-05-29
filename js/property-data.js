@@ -5,8 +5,18 @@ const propertyData = [
         location: "Katampe Main, Abuja",
         category: "Katampe",
         units: [
-            { name: "4 Bedroom Terrace + BQ", price: "Contact for Price", image: "assets/images/architectural.png", tags: ["Selling", "Modern"] },
-            { name: "3 Bedroom Apartment", price: "Contact for Price", image: "assets/images/ASOTECH VILLA apartment.png", tags: ["Selling"] }
+            { isGalleryItem: true, name: "Exterior View", image: "assets/images/Sweet home/main.jpeg", tags: ["Sold Out"] },
+            { isGalleryItem: true, name: "Interior 1", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.52.49 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 2", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.52.50 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 3", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.52.53 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 4", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.01 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 5", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.07 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 6", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.08 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 7", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.09 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 8", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.12 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 9", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.14 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 10", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.15 AM.jpeg", tags: ["Gallery"] },
+            { isGalleryItem: true, name: "Interior 11", image: "assets/images/Sweet home/WhatsApp Image 2026-05-20 at 9.53.16 AM.jpeg", tags: ["Gallery"] }
         ]
     },
     {
@@ -38,9 +48,9 @@ const propertyData = [
         location: "Apo Wasa, Abuja",
         category: "Apo",
         units: [
-            { name: "5 Bedroom Fully-detached Duplex || 450sqm", price: "₦15,795,000", image: "assets/images/5 BEDROOM FULLY-DETACHED DUPLEX  450sqm vine city.png", tags: ["Eco-friendly", "Modern"] },
-            { name: "4 Bedroom Fully-detached Duplex || 350sqm", price: "₦12,600,000", image: "assets/images/4 BEDROOM FULLY-DETACHED DUPLEX 350sqm vine city.png", tags: ["Apo Wasa"] },
-            { name: "4 Bedroom Terrace Duplex || 200sqm", price: "₦7,020,000", image: "assets/images/4 BEDROOM TERRACE DUPLEX 200sqm vine city.png", tags: ["Affordable"] }
+            { name: "5 Bedroom Fully-detached Duplex || 450sqm", price: "₦15,795,000", image: "assets/images/Vine City/1.png", tags: ["Eco-friendly", "Modern"] },
+            { name: "4 Bedroom Fully-detached Duplex || 350sqm", price: "₦12,600,000", image: "assets/images/Vine City/350sqm.png", tags: ["Apo Wasa"] },
+            { name: "4 Bedroom Terrace Duplex || 200sqm", price: "₦7,020,000", image: "assets/images/Vine City/terrace.png", tags: ["Affordable"] }
         ]
     },
     {
@@ -49,9 +59,9 @@ const propertyData = [
         location: "Life Camp, Abuja",
         category: "Life Camp",
         units: [
-            { name: "5 Bedroom Fully-detached Duplex || 500sqm", price: "₦30,000,000", image: "assets/images/5 Bedroom Fully-detached Duplex 500sqm light city.png", tags: ["Luxury", "Life Camp"] },
-            { name: "4 Bedroom Semi-detached Duplex || 250sqm", price: "₦18,000,000", image: "assets/images/4 Bedroom Semi-detached Duplex  250sqm light city.png", tags: ["Elite"] },
-            { name: "4 Bedroom Terrace Duplex || 200sqm", price: "₦15,000,000", image: "assets/images/3 Bedroom Terrace Duplex 150sqm light city.png", tags: ["Prime"] }
+            { name: "5 Bedroom Fully-detached Duplex || 500sqm", price: "₦30,000,000", image: "assets/images/Rehoabot/IMG_9101.JPG.jpeg", tags: ["Luxury", "Life Camp"] },
+            { name: "4 Bedroom Semi-detached Duplex || 250sqm", price: "₦18,000,000", image: "assets/images/Rehoabot/IMG_9102.JPG.jpeg", tags: ["Elite"] },
+            { name: "4 Bedroom Terrace Duplex || 200sqm", price: "₦15,000,000", image: "assets/images/Rehoabot/IMG_9103.JPG.jpeg", tags: ["Prime"] }
         ]
     },
     {
@@ -60,9 +70,9 @@ const propertyData = [
         location: "Gwarimpa II, Abuja",
         category: "Gwarimpa",
         units: [
-            { name: "4 Bedroom Fully-detached Duplex || 500sqm", price: "₦79,999,994", image: "assets/images/5 Bedroom Fully-detached Duplex 500sqm light city.png", tags: ["Premium", "Gwarimpa"] },
-            { name: "4 Bedroom Semi-detached Duplex || 250sqm", price: "₦39,999,995", image: "assets/images/4 BEDROOM SEMI-DETACHED DUPLEX 250sqm DE VIEW.png", tags: ["Elite"] },
-            { name: "3 Bedroom Terrace Duplex || 150sqm", price: "₦24,999,995", image: "assets/images/3 BEDROOM TERRACE DUPLEX 150sqm DE View.png", tags: ["Modern"] }
+            { name: "4 Bedroom Fully-detached Duplex || 500sqm", price: "₦79,999,994", image: "assets/images/de view/b3b88cf7-4215-478d-b450-97e4534a4d7c (1).jpg.jpeg", tags: ["Premium", "Gwarimpa"] },
+            { name: "4 Bedroom Semi-detached Duplex || 250sqm", price: "₦39,999,995", image: "assets/images/de view/a1f81903-c5d2-4722-b114-4caab2ec8b0b (1).jpg.jpeg", tags: ["Elite"] },
+            { name: "3 Bedroom Terrace Duplex || 150sqm", price: "₦24,999,995", image: "assets/images/de view/d3cf8c64-edb8-4dc3-8219-11ff2c670ef7 (1).jpg.jpeg", tags: ["Modern"] }
         ]
     },
     {
@@ -71,11 +81,11 @@ const propertyData = [
         location: "Idu, Abuja",
         category: "Idu",
         units: [
-            { name: "3 Bedroom Block of Flats (6 Units) || 720sqm", price: "₦27,000,000", image: "assets/images/ASOTECH VILLA apartment.png", tags: ["Investment", "Idu"] },
-            { name: "5 Bedroom Fully-detached Duplex || 500sqm", price: "₦18,000,000", image: "assets/images/5 Bedroom Fully-detached Duplex 500sqm light city.png", tags: ["Luxury", "Spacious"] },
-            { name: "4 Bedroom Fully-detached Duplex || 350sqm", price: "₦12,600,000", image: "assets/images/architectural.png", tags: ["Executive"] },
-            { name: "4 Bedroom Semi-detached Duplex || 250sqm", price: "₦9,000,000", image: "assets/images/4 Bedroom Semi-detached Duplex  250sqm light city.png", tags: ["Modern"] },
-            { name: "3 Bedroom Terrace Duplex || 150sqm", price: "₦5,400,000", image: "assets/images/3 Bedroom Terrace Duplex 150sqm light city.png", tags: ["Affordable"] }
+            { name: "3 Bedroom Block of Flats (6 Units) || 720sqm", price: "₦27,000,000", image: "assets/images/light city/WhatsApp Image 2026-04-05 at 10.36.25 AM.jpeg", tags: ["Investment", "Idu"] },
+            { name: "5 Bedroom Fully-detached Duplex || 500sqm", price: "₦18,000,000", image: "assets/images/light city/WhatsApp Image 2026-05-07 at 9.17.55 AM.jpeg", tags: ["Luxury", "Spacious"] },
+            { name: "4 Bedroom Fully-detached Duplex || 350sqm", price: "₦12,600,000", image: "assets/images/light city/WhatsApp Image 2026-04-05 at 10.36.26 AM (1).jpeg", tags: ["Executive"] },
+            { name: "4 Bedroom Semi-detached Duplex || 250sqm", price: "₦9,000,000", image: "assets/images/light city/WhatsApp Image 2026-04-05 at 10.36.26 AM.jpeg", tags: ["Modern"] },
+            { name: "3 Bedroom Terrace Duplex || 150sqm", price: "₦5,400,000", image: "assets/images/light city/WhatsApp Image 2026-04-05 at 10.36.25 AM.jpeg", tags: ["Affordable"] }
         ]
     },
     {
@@ -84,10 +94,10 @@ const propertyData = [
         location: "Jabi, Abuja",
         category: "Jabi",
         units: [
-            { name: "3 Bedroom Apartment", price: "₦250,000,000", image: "assets/images/ASOTECH VILLA apartment.png", tags: ["Luxury Apartment", "Jabi"] },
-            { name: "2 Bedroom Apartment", price: "₦180,000,000", image: "assets/images/ASOTECH VILLA apartment.png", tags: ["Exclusive"] },
-            { name: "1 Bedroom Apartment", price: "₦100,000,000", image: "assets/images/ASOTECH VILLA apartment.png", tags: ["Investment"] },
-            { name: "5 Bedroom Fully-detached Duplex || 500sqm", price: "₦150,000,000", image: "assets/images/Asotech Villa 5 BEDROOM FULLY-DETACHED DUPLEX 500Sqm.png", tags: ["Elite"] }
+            { name: "3 Bedroom Apartment", price: "₦250,000,000", image: "assets/images/Asotech villa/002.jpg.jpeg", tags: ["Luxury Apartment", "Jabi"] },
+            { name: "2 Bedroom Apartment", price: "₦180,000,000", image: "assets/images/Asotech villa/003.jpg.jpeg", tags: ["Exclusive"] },
+            { name: "1 Bedroom Apartment", price: "₦100,000,000", image: "assets/images/Asotech villa/004.jpg.jpeg", tags: ["Investment"] },
+            { name: "5 Bedroom Fully-detached Duplex || 500sqm", price: "₦150,000,000", image: "assets/images/Asotech villa/005.jpg.jpeg", tags: ["Elite"] }
         ]
     },
     {
@@ -96,8 +106,28 @@ const propertyData = [
         location: "Kubwa, Abuja",
         category: "Kubwa",
         units: [
-            { name: "4 Bedroom Semi-Detached Duplex || 350sqm", price: "₦35,000,000", image: "assets/images/Brick City 4 Bedroom Semi-Detached Duplex – 350SQM.png", tags: ["Guazanga Ext.", "Modern"] },
-            { name: "4 Bedroom Semi-Detached Duplex || 250sqm", price: "₦25,000,000", image: "assets/images/brick city 4 Bedroom Semi-Detached Duplex – 250SQM.png", tags: ["Family Home"] }
+            { name: "4 Bedroom Semi-Detached Duplex || 350sqm", price: "₦35,000,000", image: "assets/images/Brick City/1.png", tags: ["Guazanga Ext.", "Modern"] },
+            { name: "4 Bedroom Semi-Detached Duplex || 300sqm", price: "₦30,000,000", image: "assets/images/Brick City/3.png", tags: ["Affordable Luxury"] },
+            { name: "4 Bedroom Semi-Detached Duplex || 250sqm", price: "₦25,000,000", image: "assets/images/Brick City/2.png", tags: ["Family Home"] }
+        ]
+    },
+    {
+        id: "asotech-vista",
+        estate: "Asotech Vista",
+        location: "Behind Berger Yard, Life Camp, Abuja",
+        category: "Life Camp",
+        units: [
+            { name: "4 Bedroom Luxury Terrace Duplex || Outright Payment", price: "₦200,000,000", image: "assets/images/Asotech Vista/1.jpeg", tags: ["Outright"] },
+            { name: "4 Bedroom Luxury Terrace Duplex || Installment Plan", price: "₦220,000,000", image: "assets/images/Asotech Vista/2.jpeg", tags: ["Installment"] }
+        ]
+    },
+    {
+        id: "asotech-crest",
+        estate: "Asotech Crest",
+        location: "Gaduwa, Abuja",
+        category: "Gaduwa",
+        units: [
+            { name: "Premium Luxury Duplexes || Coming Soon", price: "Price TBD", image: "assets/images/architectural.png", tags: ["Coming Soon"] }
         ]
     }
 ];

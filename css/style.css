@@ -183,6 +183,7 @@ html.lenis {
     transform-style: preserve-3d;
     /* transition is set via Tailwind (duration-500), but we'll let GSAP handle the transform */
     will-change: transform, box-shadow;
+    cursor: pointer;
 }
 
 /* Parallax elements inside the card */

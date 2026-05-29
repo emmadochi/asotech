@@ -223,27 +223,54 @@
                 } else {
                     document.getElementById('no-results').classList.add('hidden');
                     itemsToShow.forEach(item => {
-                        const card = `
-                            <div class="property-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 opacity-0 translate-y-10">
-                                <div class="aspect-[4/3] overflow-hidden relative">
-                                    <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute top-6 left-6 flex flex-wrap gap-2">
-                                        ${item.tags.map(tag => `<span class="px-3 py-1 bg-primary text-dark font-bold text-[9px] uppercase tracking-widest rounded-full z-10">${tag}</span>`).join('')}
+                        let card = '';
+                        if (item.isGalleryItem) {
+                            card = `
+                                <div class="property-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 opacity-0 translate-y-10 cursor-pointer" onclick="window.open('${item.image}', '_blank')">
+                                    <div class="aspect-[4/3] md:aspect-square overflow-hidden relative">
+                                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <i class="fa-solid fa-expand text-white text-3xl"></i>
+                                        </div>
+                                        ${item.tags.some(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon') ? `
+                                        <div class="absolute top-6 left-6 flex flex-wrap gap-2">
+                                            ${item.tags.filter(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon').map(tag => {
+                                                const bgClass = tag.toLowerCase() === 'sold out' ? 'bg-red-600 text-white' : 'bg-primary text-dark';
+                                                return `<span class="px-3 py-1 ${bgClass} font-bold text-[9px] uppercase tracking-widest rounded-full z-10 shadow-lg">${tag}</span>`;
+                                            }).join('')}
+                                        </div>
+                                        ` : ''}
                                     </div>
                                 </div>
-                                <div class="p-8">
-                                    <h4 class="text-xs uppercase tracking-widest text-primary font-bold mb-2">${item.estateName}</h4>
-                                    <h3 class="text-2xl font-bold font-outfit text-dark mb-4">${item.name}</h3>
-                                    <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
-                                        <i class="fa-solid fa-location-dot text-primary"></i> ${item.location}
-                                    </p>
-                                    <div class="pt-6 border-t border-accent flex justify-between items-center">
-                                        <span class="text-lg font-bold font-outfit text-dark">${item.price}</span>
-                                        <a href="contact.html?interest=${encodeURIComponent(item.name)}" class="px-6 py-3 bg-dark text-white text-[10px] uppercase font-bold tracking-widest hover:bg-primary transition-all rounded-lg">Inquire</a>
+                            `;
+                        } else {
+                            card = `
+                                <div class="property-card group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 opacity-0 translate-y-10">
+                                    <div class="aspect-[4/3] overflow-hidden relative">
+                                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                        ${item.tags.some(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon') ? `
+                                        <div class="absolute top-6 left-6 flex flex-wrap gap-2">
+                                            ${item.tags.filter(tag => tag.toLowerCase() === 'sold out' || tag.toLowerCase() === 'coming soon').map(tag => {
+                                                const bgClass = tag.toLowerCase() === 'sold out' ? 'bg-red-600 text-white' : 'bg-primary text-dark';
+                                                return `<span class="px-3 py-1 ${bgClass} font-bold text-[9px] uppercase tracking-widest rounded-full z-10 shadow-lg">${tag}</span>`;
+                                            }).join('')}
+                                        </div>
+                                        ` : ''}
+                                    </div>
+                                    <div class="p-8">
+                                        <h4 class="text-xs uppercase tracking-widest text-primary font-bold mb-2">${item.estateName}</h4>
+                                        <h3 class="text-2xl font-bold font-outfit text-dark mb-4">${item.name}</h3>
+                                        <p class="text-dark/50 text-sm flex items-center gap-2 mb-6">
+                                            <i class="fa-solid fa-location-dot text-primary"></i> ${item.location}
+                                        </p>
+                                        <div class="pt-6 border-t border-accent flex justify-between items-center">
+                                            <span class="text-lg font-bold font-outfit text-dark">${item.price}</span>
+                                            <a href="contact.html?interest=${encodeURIComponent(item.name)}" class="px-6 py-3 bg-dark text-white text-[10px] uppercase font-bold tracking-widest hover:bg-primary transition-all rounded-lg">Inquire</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        `;
+                            `;
+                        }
                         grid.innerHTML += card;
                     });
                     

@@ -274,182 +274,110 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 10. Premium Estate Card Animations (3D Tilt & Magnetic)
+    // 10. Premium Estate Card Animations (3D Tilt & Magnetic) & Navigation
     const estateCards = document.querySelectorAll('.estate-card');
     
     // Check if device is touch-based. If so, skip tilt for better performance/UX
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
 
-    if (!isTouchDevice && estateCards.length > 0) {
+    if (estateCards.length > 0) {
         estateCards.forEach(card => {
-            // Dynamically add parallax classes to children to avoid cluttering HTML
-            const badge = card.querySelector('.absolute.top-6');
-            if (badge) badge.classList.add('badge-floating');
-            
-            const content = card.querySelector('.p-8');
-            if (content) content.classList.add('content-floating');
-            
-            const arrowBtn = card.querySelector('.pt-6 a');
-            if (arrowBtn) arrowBtn.classList.add('magnetic-btn');
-
-            // 3D Tilt Logic
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                // Calculate rotation (max 12 degrees)
-                const rotateX = ((y - centerY) / centerY) * -12; 
-                const rotateY = ((x - centerX) / centerX) * 12;
-
-                gsap.to(card, {
-                    rotateX: rotateX,
-                    rotateY: rotateY,
-                    duration: 0.5,
-                    ease: "power2.out",
-                    transformPerspective: 1200
-                });
-
-                // Magnetic Button Logic
-                if (arrowBtn) {
-                    const btnRect = arrowBtn.getBoundingClientRect();
-                    // Get button center relative to the card
-                    const btnCenterX = (btnRect.left - rect.left) + (btnRect.width / 2);
-                    const btnCenterY = (btnRect.top - rect.top) + (btnRect.height / 2);
-                    
-                    const distX = x - btnCenterX;
-                    const distY = y - btnCenterY;
-                    
-                    // Pull if cursor is within 80px radius
-                    if (Math.abs(distX) < 80 && Math.abs(distY) < 80) {
-                        gsap.to(arrowBtn, {
-                            x: distX * 0.4,
-                            y: distY * 0.4,
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
-                    } else {
-                        gsap.to(arrowBtn, {
-                            x: 0,
-                            y: 0,
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
+            // Make the entire card clickable
+            card.addEventListener('click', () => {
+                const link = card.querySelector('.pt-6 a');
+                if (link) {
+                    const href = link.getAttribute('href');
+                    if (href) {
+                        window.location.href = href;
                     }
                 }
             });
 
-            // Reset smoothly on mouse leave
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, {
-                    rotateX: 0,
-                    rotateY: 0,
-                    duration: 1,
-                    ease: "elastic.out(1, 0.4)"
-                });
+            // 3D Tilt & Parallax animations (only for non-touch devices)
+            if (!isTouchDevice) {
+                // Dynamically add parallax classes to children to avoid cluttering HTML
+                const badge = card.querySelector('.absolute.top-6');
+                if (badge) badge.classList.add('badge-floating');
                 
-                if (arrowBtn) {
-                    gsap.to(arrowBtn, {
-                        x: 0,
-                        y: 0,
-                        duration: 0.8,
+                const content = card.querySelector('.p-8');
+                if (content) content.classList.add('content-floating');
+                
+                const arrowBtn = card.querySelector('.pt-6 a');
+                if (arrowBtn) arrowBtn.classList.add('magnetic-btn');
+
+                // 3D Tilt Logic
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    // Calculate rotation (max 12 degrees)
+                    const rotateX = ((y - centerY) / centerY) * -12; 
+                    const rotateY = ((x - centerX) / centerX) * 12;
+
+                    gsap.to(card, {
+                        rotateX: rotateX,
+                        rotateY: rotateY,
+                        duration: 0.5,
+                        ease: "power2.out",
+                        transformPerspective: 1200
+                    });
+
+                    // Magnetic Button Logic
+                    if (arrowBtn) {
+                        const btnRect = arrowBtn.getBoundingClientRect();
+                        // Get button center relative to the card
+                        const btnCenterX = (btnRect.left - rect.left) + (btnRect.width / 2);
+                        const btnCenterY = (btnRect.top - rect.top) + (btnRect.height / 2);
+                        
+                        const distX = x - btnCenterX;
+                        const distY = y - btnCenterY;
+                        
+                        // Pull if cursor is within 80px radius
+                        if (Math.abs(distX) < 80 && Math.abs(distY) < 80) {
+                            gsap.to(arrowBtn, {
+                                x: distX * 0.4,
+                                y: distY * 0.4,
+                                duration: 0.3,
+                                ease: "power2.out"
+                            });
+                        } else {
+                            gsap.to(arrowBtn, {
+                                x: 0,
+                                y: 0,
+                                duration: 0.3,
+                                ease: "power2.out"
+                            });
+                        }
+                    }
+                });
+
+                // Reset smoothly on mouse leave
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        rotateX: 0,
+                        rotateY: 0,
+                        duration: 1,
                         ease: "elastic.out(1, 0.4)"
                     });
-                }
-            });
-        });
-    }
-
-    // 11. Investment Calculator Logic
-    const calcSection = document.getElementById('calculator');
-    if (calcSection) {
-        const inputs = {
-            amount: document.getElementById('calc-amount'),
-            appreciation: document.getElementById('calc-appreciation'),
-            yield: document.getElementById('calc-yield'),
-            duration: document.getElementById('calc-duration')
-        };
-        const displays = {
-            amount: document.getElementById('val-amount'),
-            appreciation: document.getElementById('val-appreciation'),
-            yield: document.getElementById('val-yield'),
-            duration: document.getElementById('val-duration')
-        };
-        const results = {
-            value: document.getElementById('res-value'),
-            rent: document.getElementById('res-rent'),
-            roi: document.getElementById('res-roi')
-        };
-
-        const formatNaira = (num) => new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }).format(num);
-
-        let currentResults = { value: 0, rent: 0, roi: 0 };
-
-        const updateCalculator = () => {
-            const amount = parseFloat(inputs.amount.value);
-            const appRate = parseFloat(inputs.appreciation.value) / 100;
-            const yieldRate = parseFloat(inputs.yield.value) / 100;
-            const years = parseFloat(inputs.duration.value);
-
-            // Update Input Displays
-            displays.amount.textContent = formatNaira(amount);
-            displays.appreciation.textContent = `${inputs.appreciation.value}%`;
-            displays.yield.textContent = `${inputs.yield.value}%`;
-            displays.duration.textContent = `${years} Year${years > 1 ? 's' : ''}`;
-
-            // Calculations
-            const projectedValue = amount * Math.pow(1 + appRate, years);
-            const annualRent = amount * yieldRate;
-            const totalRent = annualRent * years;
-            const totalProfit = (projectedValue - amount) + totalRent;
-            const roiPercentage = (totalProfit / amount) * 100;
-
-            // Animate Results with GSAP
-            gsap.to(currentResults, {
-                value: projectedValue,
-                rent: totalRent,
-                roi: roiPercentage,
-                duration: 0.6,
-                ease: "power2.out",
-                onUpdate: () => {
-                    results.value.textContent = formatNaira(currentResults.value);
-                    results.rent.textContent = formatNaira(currentResults.rent);
-                    results.roi.textContent = `${Math.round(currentResults.roi)}%`;
-                }
-            });
-        };
-
-        // Bind Events
-        Object.values(inputs).forEach(input => {
-            input.addEventListener('input', updateCalculator);
-        });
-
-        // Initialize values without animation
-        const initialAmount = parseFloat(inputs.amount.value);
-        const initialAppRate = parseFloat(inputs.appreciation.value) / 100;
-        const initialYieldRate = parseFloat(inputs.yield.value) / 100;
-        const initialYears = parseFloat(inputs.duration.value);
-        currentResults.value = initialAmount * Math.pow(1 + initialAppRate, initialYears);
-        currentResults.rent = (initialAmount * initialYieldRate) * initialYears;
-        currentResults.roi = (((currentResults.value - initialAmount) + currentResults.rent) / initialAmount) * 100;
-        updateCalculator();
-
-        // Scroll Reveal for Calculator
-        gsap.to('.calc-reveal', {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: '#calculator',
-                start: "top 85%",
+                    
+                    if (arrowBtn) {
+                        gsap.to(arrowBtn, {
+                            x: 0,
+                            y: 0,
+                            duration: 0.8,
+                            ease: "elastic.out(1, 0.4)"
+                        });
+                    }
+                });
             }
         });
     }
+
+
 
     // 12. VIP Exit-Intent Modal Logic
     const vipModal = document.getElementById('vip-modal');
